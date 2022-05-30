@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:paddingLeft="@dimen/px50"
+        android:paddingTop="@dimen/px50"
+        android:paddingBottom="@dimen/px50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/picker_future_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="日期选择器器（包含未来时间）" />
+
+        <Button
+            android:id="@+id/picker_zh_birthday"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="中文日期选择器" />
+
+        <Button
+            android:id="@+id/picker_en_birthday"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="英文日期选择器" />
+
+        <Button
+            android:id="@+id/picker_ru_birthday"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="俄语日期选择器" />
+
+        <Button
+            android:id="@+id/picker_ko_birthday"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="韩文日期时间段" />
+
+        <Button
+            android:id="@+id/picker_it_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="IT日期选择器" />
+
+
+        <Button
+            android:id="@+id/picker_de_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="DE日期选择器" />
+
+        <Button
+            android:id="@+id/picker_es_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ES日期选择器" />
+
+        <Button
+            android:id="@+id/picker_fr_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="FR日期选择器" />
+
+        <Button
+            android:id="@+id/picker_ro_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="RO日期选择器" />
+
+        <Button
+            android:id="@+id/picker_tr_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="TR日期选择器" />
+
+        <Button
+            android:id="@+id/picker_uk_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="UK日期选择器" />
+
+        <Button
+            android:id="@+id/picker_pt_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="PT日期选择器" />
+
+
+        <Button
+            android:id="@+id/picker_vi_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="VI日期选择器" />
+
+        <Button
+            android:id="@+id/picker_other_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="其他语言默认日期选择器" />
+
+        <Button
+            android:id="@+id/picker_sex"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="性别选择器" />
+
+    </LinearLayout>
+</ScrollView>

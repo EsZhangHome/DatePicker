@@ -1,0 +1,54 @@
+<resources>
+    <!-- 英文不显示-->
+    <string name="_year_en"></string>
+    <string name="_month_en"></string>
+    <string name="_day_en"></string>
+    <string name="_hour_en"></string>
+    <string name="_minute_en"></string>
+    <string name="_second_en"></string>
+    <!--中文显示-->
+    <string name="_year_zh">年</string>
+    <string name="_month_zh">月</string>
+    <string name="_day_zh">日</string>
+    <string name="_hour_zh">时</string>
+    <string name="_minute_zh">分</string>
+    <string name="_second_zh">秒</string>
+    <!--俄语不显示-->
+    <string name="_year_ru"></string>
+    <string name="_month_ru"></string>
+    <string name="_day_ru"></string>
+    <string name="_hour_ru"></string>
+    <string name="_minute_ru"></string>
+    <string name="_second_ru"></string>
+    <!-- 韩语只显示年 日 月以规范-->
+    <string name="_year_ko">년</string>
+    <string name="_month_ko">월</string>
+    <string name="_day_ko">일</string>
+    <string name="_hour_ko"></string>
+    <string name="_minute_ko"></string>
+    <string name="_second_ko"></string>
+
+    <!--    日语显示年 日 不显示 月-->
+    <string name="_year_ja">年</string>
+    <string name="_month_ja"></string>
+    <string name="_day_ja">日</string>
+    <string name="_hour_ja"></string>
+    <string name="_minute_ja"></string>
+    <string name="_second_ja"></string>
+
+    <!--默认状态-->
+    <string name="_year"></string>
+    <string name="_month"></string>
+    <string name="_day"></string>
+    <string name="_hour"></string>
+    <string name="_minute"></string>
+    <string name="_second"></string>
+
+    <string name="_after_tomorrow">后天</string>
+    <string name="_this_year">今年</string>
+    <string name="_next_year">明年</string>
+
+
+    <string name="cancel">取消</string>
+    <string name="finish">完成</string>
+</resources>
