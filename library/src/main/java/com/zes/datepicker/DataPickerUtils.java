@@ -202,15 +202,10 @@ public class DataPickerUtils {
             bottomSheet = new BottomSheet(context);
         }
         if (option != null) {
-            bottomSheet.setLeftBtnText(option.getLeftTitleText());
-            bottomSheet.setRightBtnText(option.getRightTitleText());
             bottomSheet.setMiddleText(option.getMiddleTitleText());
-            bottomSheet.setLeftBtnTextColor(option.getLeftTitleColor());
-            bottomSheet.setRightBtnTextColor(option.getRightTitleColor());
             bottomSheet.setMiddleTextColor(option.getMiddleTitleColor());
-            bottomSheet.setTitleBackground(option.getTitleBackground());
+            bottomSheet.setTitleTextSize(option.getTitleTextSize());
             bottomSheet.setLineColor(option.getLineColor());
-
             bottomSheet.setTitleHeight(option.getTitleHeight());
         }
         bottomSheet.setContent(pickerView.asView());

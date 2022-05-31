@@ -2,27 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/bg"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:minHeight="@dimen/px124"
         android:layout_gravity="center"
-        android:background="#dedfe0"
         android:gravity="center">
 
-        <Button
+        <ImageView
             android:id="@+id/left_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/px90"
-            android:background="@android:color/transparent"
-            android:paddingLeft="@dimen/px26"
-            android:paddingRight="@dimen/px26"
-            android:singleLine="true"
-            android:text="@string/cancel"
-            android:textColor="@color/font_blue"
-            android:textSize="@dimen/font_26px" />
+            android:layout_width="@dimen/px48"
+            android:layout_height="@dimen/px48"
+            android:layout_marginStart="@dimen/px40"
+            android:gravity="center"
+            android:src="@drawable/pop_close" />
 
         <TextView
             android:id="@+id/middle_txt"
@@ -33,19 +30,19 @@
             android:paddingLeft="@dimen/px36"
             android:paddingTop="@dimen/px26"
             android:paddingRight="@dimen/px36"
-            android:paddingBottom="@dimen/px26" />
+            android:paddingBottom="@dimen/px26"
+            android:textColor="#1C1C1C"
+            android:textSize="16sp" />
 
-        <Button
+        <ImageView
             android:id="@+id/right_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/px90"
-            android:background="@android:color/transparent"
-            android:paddingLeft="@dimen/px26"
-            android:paddingRight="@dimen/px26"
-            android:singleLine="true"
-            android:text="@string/finish"
-            android:textColor="@color/font_blue"
-            android:textSize="@dimen/font_26px" />
+            android:layout_width="@dimen/px48"
+            android:layout_height="@dimen/px48"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/px40"
+            android:gravity="center"
+            android:src="@drawable/pop_ok" />
 
     </LinearLayout>
 
@@ -53,7 +50,7 @@
         android:id="@+id/back_line"
         android:layout_width="match_parent"
         android:layout_height="@dimen/px2"
-        android:background="#dedfe0" />
+        android:background="#F1F1F1" />
 
     <FrameLayout
         android:id="@+id/content_dialog"

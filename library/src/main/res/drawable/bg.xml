@@ -4,6 +4,7 @@
     <solid android:color="#FFFFFF" />
     <!-- 圆角 -->
     <corners
-        android:radius="14dp" />
+        android:topLeftRadius="14dp"
+        android:topRightRadius="14dp" />
 
 </shape>

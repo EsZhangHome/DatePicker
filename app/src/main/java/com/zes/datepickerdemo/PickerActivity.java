@@ -32,13 +32,8 @@ public class PickerActivity extends Activity {
 
     private PickOption.Builder getPickDefaultOptionBuilder(Context context) {
         return PickOption.getPickDefaultOptionBuilder(context)
-                .setLeftTitleColor(0xFF1233DD)
-                .setRightTitleColor(0xFF1233DD)
                 .setMiddleTitleColor(0xFF333333)
-                .setTitleBackground(Color.WHITE)
-                .setLineColor(0XFF333333)
-                .setLeftTitleText("取消")
-                .setRightTitleText("确定");
+                .setLineColor(0XFFF1F1F1);
     }
 
     @Override
@@ -153,13 +148,34 @@ public class PickerActivity extends Activity {
         });
 
         //选择生日
+        findViewById(R.id.picker_ja_birthday).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PickOption option = getPickDefaultOptionBuilder(mContext)
+                        .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setMiddleTitleText("小日子过的不错日期时间器")
+                        .build();
+                DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.JA,
+                        new OnDatePickListener() {
+                            @Override
+                            public void onDatePicked(IDateTimePicker dateTimePicker) {
+                                mInitBirthday.setTime(dateTimePicker.getTime());
+                                Toast.makeText(mContext, formatDate(dateTimePicker.getTime(), TIME_YYYY_MM_DD),
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
+        //选择生日
         findViewById(R.id.picker_it_birthday).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("IT日期选择器")
+                        .setMiddleTitleText("意大利日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.IT,
                         new OnDatePickListener() {
@@ -180,7 +196,7 @@ public class PickerActivity extends Activity {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("DE日期选择器")
+                        .setMiddleTitleText("德国日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.DE,
                         new OnDatePickListener() {
@@ -201,7 +217,7 @@ public class PickerActivity extends Activity {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("ES日期选择器")
+                        .setMiddleTitleText("西班牙日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.ES,
                         new OnDatePickListener() {
@@ -222,7 +238,7 @@ public class PickerActivity extends Activity {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("FR日期选择器")
+                        .setMiddleTitleText("法国日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.FR,
                         new OnDatePickListener() {
@@ -243,7 +259,7 @@ public class PickerActivity extends Activity {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("RO日期选择器")
+                        .setMiddleTitleText("罗马尼亚日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.RO,
                         new OnDatePickListener() {
@@ -264,7 +280,7 @@ public class PickerActivity extends Activity {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("TR日期选择器")
+                        .setMiddleTitleText("土耳其日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.TR,
                         new OnDatePickListener() {
@@ -285,7 +301,7 @@ public class PickerActivity extends Activity {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("UK日期选择器")
+                        .setMiddleTitleText("英国日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.UK,
                         new OnDatePickListener() {
@@ -306,7 +322,7 @@ public class PickerActivity extends Activity {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("VI日期选择器")
+                        .setMiddleTitleText("越南日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.VI,
                         new OnDatePickListener() {
@@ -327,7 +343,7 @@ public class PickerActivity extends Activity {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("PT日期选择器")
+                        .setMiddleTitleText("葡萄牙日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.PT,
                         new OnDatePickListener() {
@@ -362,12 +378,77 @@ public class PickerActivity extends Activity {
             }
         });
 
+        //选择生日
+        findViewById(R.id.picker_other_birthday).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PickOption option = getPickDefaultOptionBuilder(mContext)
+                        .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setMiddleTitleText("其他日期选择器")
+                        .build();
+                DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.OTHER,
+                        new OnDatePickListener() {
+                            @Override
+                            public void onDatePicked(IDateTimePicker dateTimePicker) {
+                                mInitBirthday.setTime(dateTimePicker.getTime());
+                                Toast.makeText(mContext, formatDate(dateTimePicker.getTime(), TIME_YYYY_MM_DD),
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
+        //选择生日
+        findViewById(R.id.picker_long_birthday).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PickOption option = getPickDefaultOptionBuilder(mContext)
+                        .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setMiddleTitleText("测试一个长标题文案的日期选择器试试显示布局是什么样子的因为设置了最小的高度，不知道超过最小高度后啥样子")
+                        .build();
+                DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option,
+                        new OnDatePickListener() {
+                            @Override
+                            public void onDatePicked(IDateTimePicker dateTimePicker) {
+                                mInitBirthday.setTime(dateTimePicker.getTime());
+                                Toast.makeText(mContext, formatDate(dateTimePicker.getTime(), TIME_YYYY_MM_DD),
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
+        //选择生日
+        findViewById(R.id.picker_size_color_birthday).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PickOption option = getPickDefaultOptionBuilder(mContext)
+                        .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setMiddleTitleColor(0XFFFF0000)
+                        .setTitleTextSize(28)
+                        .setMiddleTitleText("修改标题颜色+字体大小")
+                        .build();
+                DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.ZH,
+                        new OnDatePickListener() {
+                            @Override
+                            public void onDatePicked(IDateTimePicker dateTimePicker) {
+                                mInitBirthday.setTime(dateTimePicker.getTime());
+                                Toast.makeText(mContext, formatDate(dateTimePicker.getTime(), TIME_YYYY_MM_DD),
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
         //选择单个文本
         findViewById(R.id.picker_sex).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
-                        .setMiddleTitleText("性别")
+                        .setMiddleTitleText("性别(修改每个选项的颜色+分割线颜色)")
                         .setItemTextColor(0XFFFF0000)
                         .setItemLineColor(0xFF00FF00)
                         .setItemTextSize(mContext.getResources().getDimensionPixelSize(R.dimen.font_40px))

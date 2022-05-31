@@ -3,14 +3,13 @@ package com.zes.datepicker;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,8 +20,8 @@ public class BottomSheet extends Dialog implements DialogInterface.OnCancelListe
 
     private View mContentView;// dialog content view
     private String mTitleText;
-    private Button mLeftBtn;
-    private Button mRightBtn;
+    private ImageView mLeftBtn;
+    private ImageView mRightBtn;
     private TextView mTitleTv;
     private View mLine;
     private View.OnClickListener mLeftBtnClickListener;
@@ -81,8 +80,8 @@ public class BottomSheet extends Dialog implements DialogInterface.OnCancelListe
         dialogWindow.setGravity(Gravity.BOTTOM);
         mLine = dialogWindow.findViewById(R.id.back_line);
         mTitleLayout = dialogWindow.findViewById(R.id.title);
-        mLeftBtn = (Button) dialogWindow.findViewById(R.id.left_btn);
-        mRightBtn = (Button) dialogWindow.findViewById(R.id.right_btn);
+        mLeftBtn = (ImageView) dialogWindow.findViewById(R.id.left_btn);
+        mRightBtn = (ImageView) dialogWindow.findViewById(R.id.right_btn);
         mTitleTv = (TextView) dialogWindow.findViewById(R.id.middle_txt);
 
         mLeftBtn.setOnClickListener(this);
@@ -149,46 +148,10 @@ public class BottomSheet extends Dialog implements DialogInterface.OnCancelListe
         mTitleTv.setTextColor(color);
     }
 
-    public void setLeftBtnVisibility(int visibility) {
-        mLeftBtn.setVisibility(visibility);
-    }
-
-    public void setRightBtnVisibility(int visibility) {
-        mRightBtn.setVisibility(visibility);
-    }
-
-    public void setLeftBtnText(String text) {
-        mLeftBtn.setText(text);
-    }
-
-    public void setRightBtnText(String text) {
-        if (TextUtils.isEmpty(text)) {
-            return;
-        }
-
-        mRightBtn.setText(text);
-    }
-
-    public void setTitleTextSize(int leftTextSize, int middleTextSize, int rightTextSize) {
-        if (leftTextSize > 0) {
-            mLeftBtn.setTextScaleX(leftTextSize);
-        }
-
+    public void setTitleTextSize(int middleTextSize) {
         if (middleTextSize > 0) {
             mTitleTv.setTextSize(middleTextSize);
         }
-
-        if (rightTextSize > 0) {
-            mRightBtn.setTextSize(rightTextSize);
-        }
-    }
-
-    public void setLeftBtnTextColor(@ColorInt int color) {
-        mLeftBtn.setTextColor(color);
-    }
-
-    public void setRightBtnTextColor(@ColorInt int color) {
-        mRightBtn.setTextColor(color);
     }
 
     @Override

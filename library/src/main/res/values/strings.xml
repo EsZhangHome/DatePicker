@@ -36,6 +36,78 @@
     <string name="_minute_ja"></string>
     <string name="_second_ja"></string>
 
+    <!--意大利不显示-->
+    <string name="_year_it"></string>
+    <string name="_month_it"></string>
+    <string name="_day_it"></string>
+    <string name="_hour_it"></string>
+    <string name="_minute_it"></string>
+    <string name="_second_it"></string>
+
+    <!--德国不显示-->
+    <string name="_year_de"></string>
+    <string name="_month_de"></string>
+    <string name="_day_de"></string>
+    <string name="_hour_de"></string>
+    <string name="_minute_de"></string>
+    <string name="_second_de"></string>
+
+    <!--西班牙不显示-->
+    <string name="_year_es"></string>
+    <string name="_month_es"></string>
+    <string name="_day_es"></string>
+    <string name="_hour_es"></string>
+    <string name="_minute_es"></string>
+    <string name="_second_es"></string>
+
+    <!--法国牙不显示-->
+    <string name="_year_fr"></string>
+    <string name="_month_fr"></string>
+    <string name="_day_fr"></string>
+    <string name="_hour_fr"></string>
+    <string name="_minute_fr"></string>
+    <string name="_second_fr"></string>
+
+    <!--罗马尼亚不显示-->
+    <string name="_year_ro"></string>
+    <string name="_month_ro"></string>
+    <string name="_day_ro"></string>
+    <string name="_hour_ro"></string>
+    <string name="_minute_ro"></string>
+    <string name="_second_ro"></string>
+
+    <!--土耳其不显示-->
+    <string name="_year_tr"></string>
+    <string name="_month_tr"></string>
+    <string name="_day_tr"></string>
+    <string name="_hour_tr"></string>
+    <string name="_minute_tr"></string>
+    <string name="_second_tr"></string>
+
+    <!--英国不显示-->
+    <string name="_year_uk"></string>
+    <string name="_month_uk"></string>
+    <string name="_day_uk"></string>
+    <string name="_hour_uk"></string>
+    <string name="_minute_uk"></string>
+    <string name="_second_uk"></string>
+
+    <!--葡萄牙不显示-->
+    <string name="_year_pt"></string>
+    <string name="_month_pt"></string>
+    <string name="_day_pt"></string>
+    <string name="_hour_pt"></string>
+    <string name="_minute_pt"></string>
+    <string name="_second_pt"></string>
+
+    <!--越南不显示-->
+    <string name="_year_vi"></string>
+    <string name="_month_vi"></string>
+    <string name="_day_vi"></string>
+    <string name="_hour_vi"></string>
+    <string name="_minute_vi"></string>
+    <string name="_second_vi"></string>
+
     <!--默认状态-->
     <string name="_year"></string>
     <string name="_month"></string>

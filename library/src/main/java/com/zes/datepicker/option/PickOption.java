@@ -11,15 +11,11 @@ import java.util.Locale;
 
 public class PickOption {
     //===============bottomSheet style=============
-    private int leftTitleColor;
-    private int rightTitleColor;
     private int middleTitleColor;
-    private String leftTitleText;
-    private String rightTitleText;
     private String middleTitleText;
     private int titleHeight;
-    private int titleBackground;
     private int lineColor;
+    private int titleSize;
 
     //===============date pick attr=================
     /**
@@ -199,25 +195,14 @@ public class PickOption {
         return overScrollOffset;
     }
 
-    public int getLeftTitleColor() {
-        return leftTitleColor;
-    }
-
-    public int getRightTitleColor() {
-        return rightTitleColor;
-    }
-
     public int getMiddleTitleColor() {
         return middleTitleColor;
     }
 
-    public String getLeftTitleText() {
-        return leftTitleText;
+    public int getTitleTextSize() {
+        return titleSize;
     }
 
-    public String getRightTitleText() {
-        return rightTitleText;
-    }
 
     public String getMiddleTitleText() {
         return middleTitleText;
@@ -227,23 +212,15 @@ public class PickOption {
         return titleHeight;
     }
 
-    public int getTitleBackground() {
-        return titleBackground;
-    }
-
     public int getLineColor() {
         return lineColor;
     }
 
     private PickOption(Builder builder) {
-        leftTitleText = builder.leftTitleText;
-        leftTitleColor = builder.leftTitleColor;
-        rightTitleText = builder.rightTitleText;
-        rightTitleColor = builder.rightTitleColor;
         middleTitleText = builder.middleTitleText;
         middleTitleColor = builder.middleTitleColor;
+        titleSize = builder.titleSize;
         titleHeight = builder.titleHeight;
-        titleBackground = builder.titleBackground;
         lineColor = builder.lineColor;
 
         dateWitchVisible = builder.dateWitchVisible;
@@ -276,15 +253,11 @@ public class PickOption {
      */
     public static final class Builder {
         //===============bottomSheet style=============
-        private int leftTitleColor;
-        private int rightTitleColor;
         private int middleTitleColor;
-        private String leftTitleText;
-        private String rightTitleText;
         private String middleTitleText;
         private int titleHeight;
-        private int titleBackground;
         private int lineColor;
+        private int titleSize;
 
         //===============date pick attr=================
         private int dateWitchVisible;
@@ -331,28 +304,13 @@ public class PickOption {
             flingAnimFactor = 0.7f;
         }
 
-        public Builder setLeftTitleColor(int leftTitleColor) {
-            this.leftTitleColor = leftTitleColor;
-            return this;
-        }
-
-        public Builder setRightTitleColor(int rightTitleColor) {
-            this.rightTitleColor = rightTitleColor;
-            return this;
-        }
-
         public Builder setMiddleTitleColor(int middleTitleColor) {
             this.middleTitleColor = middleTitleColor;
             return this;
         }
 
-        public Builder setLeftTitleText(String leftTitleText) {
-            this.leftTitleText = leftTitleText;
-            return this;
-        }
-
-        public Builder setRightTitleText(String rightTitleText) {
-            this.rightTitleText = rightTitleText;
+        public Builder setTitleTextSize(int titleSize) {
+            this.titleSize = titleSize;
             return this;
         }
 
@@ -363,11 +321,6 @@ public class PickOption {
 
         public Builder setTitleHeight(int titleHeight) {
             this.titleHeight = titleHeight;
-            return this;
-        }
-
-        public Builder setTitleBackground(int titleBackground) {
-            this.titleBackground = titleBackground;
             return this;
         }
 

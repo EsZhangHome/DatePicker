@@ -2,13 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <LinearLayout
-        android:paddingLeft="@dimen/px50"
-        android:paddingTop="@dimen/px50"
-        android:paddingBottom="@dimen/px50"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/px50"
+        android:paddingTop="@dimen/px50"
+        android:paddingBottom="@dimen/px50">
 
         <Button
             android:id="@+id/picker_future_birthday"
@@ -43,14 +44,21 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:text="韩文日期时间段" />
+            android:text="韩文日期时间器" />
+
+        <Button
+            android:id="@+id/picker_ja_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="小日子过的不错日期时间器" />
 
         <Button
             android:id="@+id/picker_it_birthday"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="IT日期选择器" />
+            android:text="意大利日期选择器" />
 
 
         <Button
@@ -58,49 +66,49 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="DE日期选择器" />
+            android:text="德国日期选择器" />
 
         <Button
             android:id="@+id/picker_es_birthday"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="ES日期选择器" />
+            android:text="西班牙日期选择器" />
 
         <Button
             android:id="@+id/picker_fr_birthday"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="FR日期选择器" />
+            android:text="法国日期选择器" />
 
         <Button
             android:id="@+id/picker_ro_birthday"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="RO日期选择器" />
+            android:text="罗马尼亚日期选择器" />
 
         <Button
             android:id="@+id/picker_tr_birthday"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="TR日期选择器" />
+            android:text="土耳其日期选择器" />
 
         <Button
             android:id="@+id/picker_uk_birthday"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="UK日期选择器" />
+            android:text="英国日期选择器" />
 
         <Button
             android:id="@+id/picker_pt_birthday"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="PT日期选择器" />
+            android:text="葡萄牙日期选择器" />
 
 
         <Button
@@ -108,7 +116,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="VI日期选择器" />
+            android:text="越南日期选择器" />
 
         <Button
             android:id="@+id/picker_other_birthday"
@@ -118,11 +126,25 @@
             android:text="其他语言默认日期选择器" />
 
         <Button
+            android:id="@+id/picker_long_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="测试一个长标题文案的日期选择器试试显示布局是什么样子的" />
+
+        <Button
+            android:id="@+id/picker_size_color_birthday"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="修改标题颜色+字体大小" />
+
+        <Button
             android:id="@+id/picker_sex"
             android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="性别选择器" />
+            android:text="性别(修改每个选项的颜色+分割线颜色)" />
 
     </LinearLayout>
 </ScrollView>

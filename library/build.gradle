@@ -25,19 +25,3 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.0'
 }
-
-task makeJar(type: Copy) {
-
-    delete'build/libs/mysdk.jar'
-
-   from('build/intermediates/bundles/release/')
-
-    into('build/libs/')
-
-    include('classes.jar')
-
-    rename('classes.jar','mysdk.jar')
-
-}
-
-makeJar.dependsOn(build)

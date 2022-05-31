@@ -147,26 +147,26 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
 
     public DateTimePicker(Context context, boolean showFuture) {
         super(context);
-        this.showFuture =showFuture;
+        this.showFuture = showFuture;
         init(MODE_BIRTHDAY, LanguageType.ZH, showFuture);
     }
 
 
     public DateTimePicker(Context context, int mode, boolean showFuture) {
         super(context);
-        this.showFuture =showFuture;
+        this.showFuture = showFuture;
         init(mode, LanguageType.ZH, showFuture);
     }
 
     public DateTimePicker(Context context, int mode, LanguageType languageType, boolean showFuture) {
         super(context);
-        this.showFuture =showFuture;
+        this.showFuture = showFuture;
         init(mode, languageType, showFuture);
     }
 
     public DateTimePicker(Context context, int mode, LanguageType languageType) {
         super(context);
-        init(mode, languageType,false);
+        init(mode, languageType, false);
     }
 
     public DateTimePicker(Context context, long from, long to, int mode, LanguageType languageType) {
@@ -281,6 +281,14 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
                 mMinuteStr = getResources().getString(R.string._minute_en);
                 mSecondStr = getResources().getString(R.string._second_en);
                 break;
+            case ZH:
+                mYearStr = getResources().getString(R.string._year_zh);
+                mMonthStr = getResources().getString(R.string._month_zh);
+                mDayStr = getResources().getString(R.string._day_zh);
+                mHourStr = getResources().getString(R.string._hour_zh);
+                mMinuteStr = getResources().getString(R.string._minute_zh);
+                mSecondStr = getResources().getString(R.string._second_zh);
+                break;
             case RU:
                 mYearStr = getResources().getString(R.string._year_ru);
                 mMonthStr = getResources().getString(R.string._month_ru);
@@ -306,28 +314,84 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
                 mSecondStr = getResources().getString(R.string._second_ja);
                 break;
             case IT:
+                mYearStr = getResources().getString(R.string._year_it);
+                mMonthStr = getResources().getString(R.string._month_it);
+                mDayStr = getResources().getString(R.string._day_it);
+                mHourStr = getResources().getString(R.string._hour_it);
+                mMinuteStr = getResources().getString(R.string._minute_it);
+                mSecondStr = getResources().getString(R.string._second_it);
+                break;
             case DE:
+                mYearStr = getResources().getString(R.string._year_de);
+                mMonthStr = getResources().getString(R.string._month_de);
+                mDayStr = getResources().getString(R.string._day_de);
+                mHourStr = getResources().getString(R.string._hour_de);
+                mMinuteStr = getResources().getString(R.string._minute_de);
+                mSecondStr = getResources().getString(R.string._second_de);
+                break;
             case ES:
+                mYearStr = getResources().getString(R.string._year_es);
+                mMonthStr = getResources().getString(R.string._month_es);
+                mDayStr = getResources().getString(R.string._day_es);
+                mHourStr = getResources().getString(R.string._hour_es);
+                mMinuteStr = getResources().getString(R.string._minute_es);
+                mSecondStr = getResources().getString(R.string._second_es);
+                break;
             case FR:
+                mYearStr = getResources().getString(R.string._year_fr);
+                mMonthStr = getResources().getString(R.string._month_fr);
+                mDayStr = getResources().getString(R.string._day_fr);
+                mHourStr = getResources().getString(R.string._hour_fr);
+                mMinuteStr = getResources().getString(R.string._minute_fr);
+                mSecondStr = getResources().getString(R.string._second_fr);
+                break;
             case RO:
+                mYearStr = getResources().getString(R.string._year_ro);
+                mMonthStr = getResources().getString(R.string._month_ro);
+                mDayStr = getResources().getString(R.string._day_ro);
+                mHourStr = getResources().getString(R.string._hour_ro);
+                mMinuteStr = getResources().getString(R.string._minute_ro);
+                mSecondStr = getResources().getString(R.string._second_ro);
+                break;
             case TR:
+                mYearStr = getResources().getString(R.string._year_tr);
+                mMonthStr = getResources().getString(R.string._month_tr);
+                mDayStr = getResources().getString(R.string._day_tr);
+                mHourStr = getResources().getString(R.string._hour_tr);
+                mMinuteStr = getResources().getString(R.string._minute_tr);
+                mSecondStr = getResources().getString(R.string._second_tr);
+                break;
             case UK:
+                mYearStr = getResources().getString(R.string._year_uk);
+                mMonthStr = getResources().getString(R.string._month_uk);
+                mDayStr = getResources().getString(R.string._day_uk);
+                mHourStr = getResources().getString(R.string._hour_uk);
+                mMinuteStr = getResources().getString(R.string._minute_uk);
+                mSecondStr = getResources().getString(R.string._second_uk);
+                break;
             case PT:
+                mYearStr = getResources().getString(R.string._year_pt);
+                mMonthStr = getResources().getString(R.string._year_pt);
+                mDayStr = getResources().getString(R.string._year_pt);
+                mHourStr = getResources().getString(R.string._year_pt);
+                mMinuteStr = getResources().getString(R.string._year_pt);
+                mSecondStr = getResources().getString(R.string._year_pt);
+                break;
             case VI:
+                mYearStr = getResources().getString(R.string._year_vi);
+                mMonthStr = getResources().getString(R.string._month_vi);
+                mDayStr = getResources().getString(R.string._day_vi);
+                mHourStr = getResources().getString(R.string._hour_vi);
+                mMinuteStr = getResources().getString(R.string._minute_vi);
+                mSecondStr = getResources().getString(R.string._second_vi);
+                break;
+            default:
                 mYearStr = getResources().getString(R.string._year);
                 mMonthStr = getResources().getString(R.string._month);
                 mDayStr = getResources().getString(R.string._day);
                 mHourStr = getResources().getString(R.string._hour);
                 mMinuteStr = getResources().getString(R.string._minute);
                 mSecondStr = getResources().getString(R.string._second);
-                break;
-            default:
-                mYearStr = getResources().getString(R.string._year_zh);
-                mMonthStr = getResources().getString(R.string._month_zh);
-                mDayStr = getResources().getString(R.string._day_zh);
-                mHourStr = getResources().getString(R.string._hour_zh);
-                mMinuteStr = getResources().getString(R.string._minute_zh);
-                mSecondStr = getResources().getString(R.string._second_zh);
                 break;
         }
     }
@@ -374,6 +438,8 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
         switch (languageType) {
             // 英文不显示
             case EN:
+            case KO:
+            case OTHER:
                 mDateTimeItems.add(monthPicker);
                 mDateTimeItems.add(dayPicker);
                 mDateTimeItems.add(yearPicker);
@@ -382,6 +448,13 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
                 mDateTimeItems.add(secondPicker);
                 break;
             case RU:
+            case IT:
+            case DE:
+            case ES:
+            case FR:
+            case UK:
+            case PT:
+            case VI:
                 mDateTimeItems.add(dayPicker);
                 mDateTimeItems.add(monthPicker);
                 mDateTimeItems.add(yearPicker);
@@ -389,7 +462,7 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
                 mDateTimeItems.add(minutePicker);
                 mDateTimeItems.add(secondPicker);
                 break;
-            default:
+            default:// zh--中国 ja--日本 tr--土耳其
                 mDateTimeItems.add(yearPicker);
                 mDateTimeItems.add(monthPicker);
                 mDateTimeItems.add(dayPicker);
@@ -950,6 +1023,12 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
                 break;
             case TYPE_MONTH:
                 if (mLanguageType == LanguageType.ZH) {
+                    int month = getCurrentMonth(data, mMonthStr);
+                    mSelectedMonth = month >= 0 ? month : mCurrMonth;
+                } else if (mLanguageType == LanguageType.KO) {
+                    int month = getCurrentMonth(data, mMonthStr);
+                    mSelectedMonth = month >= 0 ? month : mCurrMonth;
+                } else if (mLanguageType == LanguageType.OTHER) {
                     int month = getCurrentMonth(data, mMonthStr);
                     mSelectedMonth = month >= 0 ? month : mCurrMonth;
                 } else {
