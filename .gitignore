@@ -11,3 +11,4 @@ libragy/libs/
 /app/gradlew.bat
 /app/gradle
 .idea/*
+app/release/

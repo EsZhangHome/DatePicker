@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'datepicker'
+            keyPassword 'zes123123'
+            storeFile file('datepicker.jks')
+            storePassword 'zes123123'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "28.0.3"
     defaultConfig {
@@ -13,8 +21,12 @@ android {
     }
     buildTypes {
         release {
+            signingConfig signingConfigs.debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
         }
     }
 }
