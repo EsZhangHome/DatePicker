@@ -127,24 +127,31 @@ public class DataPickerUtils {
                                                           long from, long to,
                                                           @PickMode.Mode int pickMode, LanguageType languageType) {
 
-        int mode = DateTimePicker.MODE_NORMAL;
+        int mode;
+        DateTimePicker pickerView = null;
         switch (pickMode) {
             case PickMode.MODE_BIRTHDAY:
                 mode = DateTimePicker.MODE_BIRTHDAY;
+                pickerView = new DateTimePicker(context, from, to, mode, languageType);
+                pickerView.setWheelPickerVisibility(DateTimePicker.TYPE_HH_MM_SS, View.GONE);
+
                 break;
             case PickMode.MODE_FUTURE_DATE:
                 mode = DateTimePicker.MODE_PENDING;
+                pickerView = new DateTimePicker(context, from, to, mode, languageType);
+                pickerView.setWheelPickerVisibility(option.getDateWitchVisible(), View.VISIBLE);
                 break;
             case PickMode.MODE_PERIOD_DATE:
                 mode = DateTimePicker.MODE_PERIOD;
+                pickerView = new DateTimePicker(context, from, to, mode, languageType);
+                pickerView.setWheelPickerVisibility(option.getDateWitchVisible(), View.VISIBLE);
                 break;
             case PickMode.MODE_DATE:
                 mode = DateTimePicker.MODE_NORMAL;
+                pickerView = new DateTimePicker(context, from, to, mode, languageType);
+                pickerView.setWheelPickerVisibility(option.getDateWitchVisible(), View.VISIBLE);
                 break;
         }
-
-        DateTimePicker pickerView = new DateTimePicker(context, from, to, mode, languageType);
-        pickerView.setWheelPickerVisibility(option.getDateWitchVisible(), View.VISIBLE);
         DataPickerUtils.setPickViewStyle(pickerView, option);
         return pickerView;
     }

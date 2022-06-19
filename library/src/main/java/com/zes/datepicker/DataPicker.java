@@ -329,6 +329,104 @@ public class DataPicker {
         showPicker(context, option, clearFlag, picker, listener);
     }
 
+    public static void pickDate(Context context, @Nullable String defaultDateStr, @Nullable String startDateStr, @Nullable String endDateStr, int mode, boolean clearFlag,
+                                @Nullable PickOption option, LanguageType languageType,
+                                final OnDatePickListener listener) {
+
+        final Calendar defaultCalendar = buildDefaultTime(defaultDateStr, languageType);
+        final Calendar startCalendar = buildDefaultTime(startDateStr, languageType);
+        final Calendar endCalendar = buildDateTime(endDateStr, languageType);
+        final DateTimePicker picker = DataPickerUtils.buildDateTimeWheelPicker(context, option, startCalendar.getTimeInMillis(), endCalendar.getTimeInMillis(), mode, languageType);
+        picker.setDefaultSelectedDate(defaultCalendar.get(Calendar.YEAR), defaultCalendar.get(Calendar.MONTH),
+                defaultCalendar.get(Calendar.DATE));
+        if (mode != PickMode.MODE_BIRTHDAY) {
+            picker.setDefaultSelectedTime(defaultCalendar.get(Calendar.HOUR_OF_DAY),
+                    defaultCalendar.get(Calendar.MINUTE), defaultCalendar.get(Calendar.SECOND));
+        }
+
+        showPicker(context, option, clearFlag, picker, listener);
+    }
+
+
+    public static void pickDate(Context context, @Nullable String defaultDateStr, @Nullable String startDateStr, int mode, boolean clearFlag,
+                                @Nullable PickOption option, LanguageType languageType,
+                                final OnDatePickListener listener) {
+
+        final Calendar defaultCalendar = buildDefaultTime(defaultDateStr, languageType);
+        final Calendar startCalendar = buildDefaultTime(startDateStr, languageType);
+        final DateTimePicker picker = DataPickerUtils.buildDateTimeWheelPicker(context, option, startCalendar.getTimeInMillis(), System.currentTimeMillis(), mode, languageType);
+        picker.setDefaultSelectedDate(defaultCalendar.get(Calendar.YEAR), defaultCalendar.get(Calendar.MONTH),
+                defaultCalendar.get(Calendar.DATE));
+        if (mode != PickMode.MODE_BIRTHDAY) {
+            picker.setDefaultSelectedTime(defaultCalendar.get(Calendar.HOUR_OF_DAY),
+                    defaultCalendar.get(Calendar.MINUTE), defaultCalendar.get(Calendar.SECOND));
+        }
+
+        showPicker(context, option, clearFlag, picker, listener);
+    }
+
+
+    private static Calendar buildDefaultTime(String strDate, LanguageType languageType) {
+        String year;
+        String month;
+        String day;
+        if (strDate == null || "null".equals(strDate) || "".equals(strDate)) {
+            year = "1987";
+            month = "0";
+            day = "1";
+        } else {
+            long timestamp = DateFormatUtils.changeFormatTimeToTimeStamp(languageType, strDate, "yyyyMMdd");
+            if (timestamp == 0) {
+                timestamp = DateFormatUtils.changeFormatTimeToTimeStamp(languageType, strDate, "yyyy-MM-dd");
+            }
+            if (timestamp == 0) {
+                timestamp = DateFormatUtils.changeFormatTimeToTimeStamp(languageType, strDate, "yyyy年MM月dd日");
+            }
+
+            year = DateFormatUtils.changeTimeStampToFormatTime(languageType, timestamp, "yyyy");
+            month = DateFormatUtils.changeTimeStampToFormatTime(languageType, timestamp, "MM");
+            day = DateFormatUtils.changeTimeStampToFormatTime(languageType, timestamp, "dd");
+        }
+        if (Integer.parseInt(month) <= 0) {
+            month = "0";
+        } else {
+            month = (Integer.parseInt(month) - 1) + "";
+        }
+        final Calendar calendar = Calendar.getInstance();
+        calendar.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
+
+        return calendar;
+    }
+
+
+    private static Calendar buildDateTime(String strDate, LanguageType languageType) {
+        if (strDate == null || "null".equals(strDate) || "".equals(strDate)) {
+            final Calendar calendar = Calendar.getInstance();
+            calendar.setTime(new Date());
+            return calendar;
+        } else {
+            long timestamp = DateFormatUtils.changeFormatTimeToTimeStamp(languageType, strDate, "yyyyMMdd");
+            if (timestamp == 0) {
+                timestamp = DateFormatUtils.changeFormatTimeToTimeStamp(languageType, strDate, "yyyy-MM-dd");
+            }
+            if (timestamp == 0) {
+                timestamp = DateFormatUtils.changeFormatTimeToTimeStamp(languageType, strDate, "yyyy年MM月dd日");
+            }
+
+            String year = DateFormatUtils.changeTimeStampToFormatTime(languageType, timestamp, "yyyy");
+            String month = DateFormatUtils.changeTimeStampToFormatTime(languageType, timestamp, "MM");
+            String day = DateFormatUtils.changeTimeStampToFormatTime(languageType, timestamp, "dd");
+            if (Integer.parseInt(month) <= 0) {
+                month = "0";
+            } else {
+                month = (Integer.parseInt(month) - 1) + "";
+            }
+            final Calendar calendar = Calendar.getInstance();
+            calendar.set(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
+
+            return calendar;
+        }
+    }
 
     /**
      * 显示 Time Picker
