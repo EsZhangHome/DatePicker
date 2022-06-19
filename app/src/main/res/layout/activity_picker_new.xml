@@ -146,5 +146,18 @@
             android:layout_marginTop="10dp"
             android:text="性别(修改每个选项的颜色+分割线颜色)" />
 
+        <Button
+            android:id="@+id/picker_start_end"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="开始时间+结束时间日期选择器" />
+
+        <Button
+            android:id="@+id/picker_start"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="开始时间日期选择器" />
     </LinearLayout>
 </ScrollView>

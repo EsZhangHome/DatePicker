@@ -2,7 +2,6 @@ package com.zes.datepickerdemo;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -84,6 +83,7 @@ public class PickerActivity extends Activity {
             }
         });
 
+
         //选择生日
         findViewById(R.id.picker_en_birthday).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +94,48 @@ public class PickerActivity extends Activity {
                         .setMiddleTitleText("英文日期选择器")
                         .build();
                 DataPicker.pickDate(mContext, mInitBirthday, PickMode.MODE_BIRTHDAY, option, LanguageType.EN,
+                        new OnDatePickListener() {
+                            @Override
+                            public void onDatePicked(IDateTimePicker dateTimePicker) {
+                                mInitBirthday.setTime(dateTimePicker.getTime());
+                                Toast.makeText(mContext, formatDate(dateTimePicker.getTime(), TIME_YYYY_MM_DD),
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
+        //选择生日
+        findViewById(R.id.picker_start_end).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PickOption option = getPickDefaultOptionBuilder(mContext)
+                        .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setMiddleTitleText("开始时间+结束时间日期选择器")
+                        .build();
+                DataPicker.pickDate(mContext, "20220619", "20200619", "20221231", PickMode.MODE_BIRTHDAY, false, option, LanguageType.KO,
+                        new OnDatePickListener() {
+                            @Override
+                            public void onDatePicked(IDateTimePicker dateTimePicker) {
+                                mInitBirthday.setTime(dateTimePicker.getTime());
+                                Toast.makeText(mContext, formatDate(dateTimePicker.getTime(), TIME_YYYY_MM_DD),
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
+        });
+
+        //选择生日
+        findViewById(R.id.picker_start).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PickOption option = getPickDefaultOptionBuilder(mContext)
+                        .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
+                        .setMiddleTitleText("开始时间+结束时间日期选择器")
+                        .build();
+                DataPicker.pickDate(mContext, "20220618", "20200619", PickMode.MODE_BIRTHDAY, false, option, LanguageType.KO,
                         new OnDatePickListener() {
                             @Override
                             public void onDatePicked(IDateTimePicker dateTimePicker) {
