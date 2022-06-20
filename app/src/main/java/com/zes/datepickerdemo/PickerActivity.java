@@ -114,7 +114,7 @@ public class PickerActivity extends Activity {
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setMiddleTitleText("开始时间+结束时间日期选择器")
                         .build();
-                DataPicker.pickDate(mContext, "20220619", "20200619", "20221231", PickMode.MODE_BIRTHDAY, false, option, LanguageType.KO,
+                DataPicker.pickDate(mContext, "20220619", "20200619", "20221231", option, LanguageType.KO,
                         new OnDatePickListener() {
                             @Override
                             public void onDatePicked(IDateTimePicker dateTimePicker) {
@@ -133,9 +133,9 @@ public class PickerActivity extends Activity {
                 PickOption option = getPickDefaultOptionBuilder(mContext)
                         .setLeftPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
                         .setRightPadding(mContext.getResources().getDimensionPixelSize(R.dimen.px150))
-                        .setMiddleTitleText("开始时间+结束时间日期选择器")
+                        .setMiddleTitleText("开始时间日期选择器")
                         .build();
-                DataPicker.pickDate(mContext, "20220618", "20200619", PickMode.MODE_BIRTHDAY, false, option, LanguageType.KO,
+                DataPicker.pickDate(mContext, "20220618", "20200620", option, LanguageType.KO,
                         new OnDatePickListener() {
                             @Override
                             public void onDatePicked(IDateTimePicker dateTimePicker) {
