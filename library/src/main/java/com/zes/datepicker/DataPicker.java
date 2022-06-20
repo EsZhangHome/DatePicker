@@ -329,40 +329,30 @@ public class DataPicker {
         showPicker(context, option, clearFlag, picker, listener);
     }
 
-    public static void pickDate(Context context, @Nullable String defaultDateStr, @Nullable String startDateStr, @Nullable String endDateStr, int mode, boolean clearFlag,
+    public static void pickDate(Context context, @Nullable String defaultDateStr, @Nullable String startDateStr, @Nullable String endDateStr,
                                 @Nullable PickOption option, LanguageType languageType,
                                 final OnDatePickListener listener) {
 
         final Calendar defaultCalendar = buildDefaultTime(defaultDateStr, languageType);
         final Calendar startCalendar = buildDefaultTime(startDateStr, languageType);
         final Calendar endCalendar = buildDateTime(endDateStr, languageType);
-        final DateTimePicker picker = DataPickerUtils.buildDateTimeWheelPicker(context, option, startCalendar.getTimeInMillis(), endCalendar.getTimeInMillis(), mode, languageType);
+        final DateTimePicker picker = DataPickerUtils.buildDateTimeWheelPicker(context, option, startCalendar.getTimeInMillis(), endCalendar.getTimeInMillis(), languageType);
         picker.setDefaultSelectedDate(defaultCalendar.get(Calendar.YEAR), defaultCalendar.get(Calendar.MONTH),
                 defaultCalendar.get(Calendar.DATE));
-        if (mode != PickMode.MODE_BIRTHDAY) {
-            picker.setDefaultSelectedTime(defaultCalendar.get(Calendar.HOUR_OF_DAY),
-                    defaultCalendar.get(Calendar.MINUTE), defaultCalendar.get(Calendar.SECOND));
-        }
 
-        showPicker(context, option, clearFlag, picker, listener);
+        showPicker(context, option, false, picker, listener);
     }
 
-
-    public static void pickDate(Context context, @Nullable String defaultDateStr, @Nullable String startDateStr, int mode, boolean clearFlag,
+    public static void pickDate(Context context, @Nullable String defaultDateStr, @Nullable String startDateStr,
                                 @Nullable PickOption option, LanguageType languageType,
                                 final OnDatePickListener listener) {
 
         final Calendar defaultCalendar = buildDefaultTime(defaultDateStr, languageType);
         final Calendar startCalendar = buildDefaultTime(startDateStr, languageType);
-        final DateTimePicker picker = DataPickerUtils.buildDateTimeWheelPicker(context, option, startCalendar.getTimeInMillis(), System.currentTimeMillis(), mode, languageType);
+        final DateTimePicker picker = DataPickerUtils.buildDateTimeWheelPicker(context, option, startCalendar.getTimeInMillis(), System.currentTimeMillis(), languageType);
         picker.setDefaultSelectedDate(defaultCalendar.get(Calendar.YEAR), defaultCalendar.get(Calendar.MONTH),
                 defaultCalendar.get(Calendar.DATE));
-        if (mode != PickMode.MODE_BIRTHDAY) {
-            picker.setDefaultSelectedTime(defaultCalendar.get(Calendar.HOUR_OF_DAY),
-                    defaultCalendar.get(Calendar.MINUTE), defaultCalendar.get(Calendar.SECOND));
-        }
-
-        showPicker(context, option, clearFlag, picker, listener);
+        showPicker(context, option, false, picker, listener);
     }
 
 

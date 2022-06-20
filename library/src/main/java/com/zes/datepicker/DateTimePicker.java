@@ -174,6 +174,11 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
         init(from, to, mode, languageType);
     }
 
+    public DateTimePicker(Context context, long from, long to, LanguageType languageType) {
+        super(context);
+        init(from, to, languageType);
+    }
+
     public DateTimePicker(Context context, int fromYear, int toYear, int mode, LanguageType languageType) {
         super(context);
         init(fromYear, toYear, mode, languageType);
@@ -243,6 +248,23 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
         addPickers();
 
         initData();
+    }
+
+    private void init(long from, long to, LanguageType languageType) {
+        mMode = MODE_BIRTHDAY;
+        mFrom = from;
+        mTo = to;
+        mLanguageType = languageType;
+
+        setGravity(Gravity.CENTER);
+        setOrientation(HORIZONTAL);
+
+        initPickerLabelStr(languageType);
+        initCurrDateTime();
+        initTextWheelPicker(languageType);
+        addPickers();
+
+        initDataKnowStartTime();
     }
 
     private void init(int fromYear, int toYear, int mode, LanguageType languageType) {
@@ -500,6 +522,19 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
         }
 
         fillData(mData);
+        notifyDataSetChanged();
+    }
+
+    private void initDataKnowStartTime() {
+        for (DateTimeItem item : mDateTimeItems) {
+            //给具体的wheelPicker 设置adapter
+            TextWheelPicker picker = item.getWheelPicker();
+            picker.setAdapter(new TextWheelPickerAdapter(new ArrayList<String>()));
+            List<String> data = ((TextWheelPickerAdapter) picker.getAdapter()).getData();
+            mData.put(item.getType(), data);
+        }
+
+        fillDataKnowStartTime(mData);
         notifyDataSetChanged();
     }
 
@@ -958,6 +993,77 @@ public class DateTimePicker extends LinearLayout implements OnWheelPickedListene
         mFromYear = calendar.get(Calendar.YEAR);
         mFromMonth = 0;
         mFromDay = 1;
+
+        mFromHour = calendar.get(Calendar.HOUR_OF_DAY);
+        mFromMinute = calendar.get(Calendar.MINUTE);
+        mFromSecond = calendar.get(Calendar.SECOND);
+
+        calendar.setTimeInMillis(mTo);
+        if (showFuture) {
+            mToYear = calendar.get(Calendar.YEAR) + 100;
+            mToMonth = 11;
+            mToDay = 31;
+        } else {
+            mToYear = calendar.get(Calendar.YEAR);
+            mToMonth = calendar.get(Calendar.MONTH);
+            mToDay = calendar.get(Calendar.DAY_OF_MONTH);
+        }
+        mToHour = calendar.get(Calendar.HOUR_OF_DAY);
+        mToMinute = calendar.get(Calendar.MINUTE);
+        mToSecond = calendar.get(Calendar.SECOND);
+
+        //默认的选择的日期时间是起始日期时间
+        mSelectedYear = mFromYear;
+        mSelectedMonth = mFromMonth;
+        mSelectedDay = mFromDay;
+        mSelectedHour = mFromHour;
+        mSelectedMinute = mFromMinute;
+        mSelectedSecond = mFromSecond;
+
+        Iterator<Map.Entry<Integer, List<String>>> it = data.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<Integer, List<String>> entry = it.next();
+            int type = entry.getKey();
+            switch (type) {
+                case TYPE_YEAR:
+                    //通过 onWheelSelected的年的picker，关联其他picker数据联动
+                    updateYears(mFromYear, mToYear);
+                    break;
+//                case TYPE_MONTH:
+//                    updateMonth(mFromMonth, mToMonth);
+//                    break;
+//                case TYPE_DAY:
+//                    updateDay(mFromDay, mToDay);
+//                    break;
+//                case TYPE_HOUR:
+//                    updateHour(fromCalendar.get(Calendar.HOUR), toCalendar.get(Calendar.HOUR));
+//                    break;
+//                case TYPE_MINUTE:
+//                    updateMinute(fromCalendar.get(Calendar.MINUTE), toCalendar.get(Calendar.MINUTE));
+//                    break;
+//                case TYPE_SECOND:
+//                    updateSecond(fromCalendar.get(Calendar.SECOND), toCalendar.get(Calendar.SECOND));
+//                    break;
+            }
+        }
+    }
+
+    /**
+     * 填充数据
+     *
+     * @param data
+     */
+    private void fillDataKnowStartTime(HashMap<Integer, List<String>> data) {
+        if (mFrom == mTo || mFrom > mTo) {
+            throw new IllegalArgumentException("please set legal period of time");
+        }
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(mFrom);
+        mFromYear = calendar.get(Calendar.YEAR);
+        mFromMonth = calendar.get(Calendar.MONTH);
+        mFromDay = calendar.get(Calendar.DAY_OF_MONTH);
+
         mFromHour = calendar.get(Calendar.HOUR_OF_DAY);
         mFromMinute = calendar.get(Calendar.MINUTE);
         mFromSecond = calendar.get(Calendar.SECOND);

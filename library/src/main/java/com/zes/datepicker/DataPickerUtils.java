@@ -161,6 +161,20 @@ public class DataPickerUtils {
      * @param option
      * @return
      */
+    public static DateTimePicker buildDateTimeWheelPicker(Context context, PickOption option,
+                                                          long from, long to, LanguageType languageType) {
+
+        DateTimePicker pickerView = new DateTimePicker(context, from, to, languageType);
+        pickerView.setWheelPickerVisibility(DateTimePicker.TYPE_HH_MM_SS, View.GONE);
+        DataPickerUtils.setPickViewStyle(pickerView, option);
+        return pickerView;
+    }
+
+    /**
+     * @param context
+     * @param option
+     * @return
+     */
     public static DateTimePicker buildDateTimeWheelPicker(Context context, PickOption option, int fromYear, int toYear, LanguageType languageType) {
         DateTimePicker pickerView = new DateTimePicker(context, fromYear, toYear, DateTimePicker.MODE_BIRTHDAY, languageType);
         pickerView.setWheelPickerVisibility(DateTimePicker.TYPE_HH_MM_SS, View.GONE);
